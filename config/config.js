@@ -9,7 +9,7 @@ const config = {
         },
         api_port : 5001,
         client_secret_key:"thsgsjs",
-        swagger: {
+        app: {
             host: "localhost",
             port: 5001 
         }
@@ -22,9 +22,12 @@ const config = {
             userName :"siddhantsingh",
             password :"siddhantsingh87"
         },api_port:9898,
-        swagger: {
-            host: "172.10.1.3", 
-            port: 9898 
+        app: {
+            host: "http://172.10.1.3", 
+            port: 9898,
+            name: "Swagger Implementation",
+            swaggerURL: "http://172.10.1.3:9898",
+            swaggerPort: "172.10.1.3:9898",
         }
     }
 }
