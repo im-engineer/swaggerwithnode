@@ -1,17 +1,16 @@
-'use strict'
-require('@babel/polyfill');
-require('@babel/register');
+"use strict";
+require("@babel/polyfill");
+require("@babel/register");
 
-var config = require('../config/config');
-const app = require('../app').default;
-var configdata = config.get(process.env.Node_env);
-// import 'dotenv/config'
+var config = require("../config/default.json");
+const port = config.api_port;
 
-var apiPort = configdata.api_port;
-var http = require('http');
+const app = require("../app").default;
+var http = require("http");
+
 var server = http.createServer(app);
-server.listen(apiPort);
+server.listen(port);
 
-server.on('listening',() => {
-    console.log("Server created successfully.listen port no:" +apiPort)
-})
+server.on("listening", () => {
+  console.log("Server created successfully.listen port no:" + port);
+});

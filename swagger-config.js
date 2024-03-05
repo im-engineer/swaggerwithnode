@@ -4,31 +4,26 @@
  * @author: Siddhant Singh
  */
 import swaggerJsDocs from "swagger-jsdoc";
-var config = require('./config/config');
-console.log(config,"swaggerOptions")
-const { swaggerURL, swaggerPort } = config.get(process.env.Node_env).app;
-console.log(swaggerURL,swaggerPort)
+import config from "config";
+const { swaggerURL, swaggerPort } = config.app;
+// console.log(swaggerURL, swaggerPort);
 
 const swaggerOptions = {
-    swaggerDefinition: {
-      info: {
-        title: "Swagger implementation with node",
-        version: "1.0",
-        description: "All api end points",
-        contact: {
-          name: "Siddhant Singh"
-        },
-        servers: [`${swaggerURL}`]
+  swaggerDefinition: {
+    info: {
+      title: "Swagger implementation with node",
+      version: "1.0",
+      description: "All api end points",
+      contact: {
+        name: "Siddhant Singh",
       },
-      produces: ["application/json"],
-      host: `${swaggerPort}`
+      servers: [`${swaggerURL}`],
     },
-    apis: [
-  
-    
-    ],
-    layout: "AugmentingLayout"
+    produces: ["application/json"],
+    host: `${swaggerPort}`,
+  },
+  apis: [],
+  layout: "AugmentingLayout",
 };
-console.log(swaggerOptions,"swaggerOptions")
 
 export default swaggerJsDocs(swaggerOptions);
