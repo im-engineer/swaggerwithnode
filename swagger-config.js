@@ -6,14 +6,13 @@
 import swaggerJsDocs from "swagger-jsdoc";
 import config from "config";
 const { swaggerURL, swaggerPort } = config.app;
-// console.log(swaggerURL, swaggerPort);
 
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
       title: "Swagger implementation with node",
       version: "1.0",
-      description: "All api end points",
+      description: "All API endpoints",
       contact: {
         name: "Siddhant Singh",
       },
@@ -22,7 +21,7 @@ const swaggerOptions = {
     produces: ["application/json"],
     host: `${swaggerPort}`,
   },
-  apis: [],
+  apis: ["./router/machineRoute.js", "./app.json"], // Add the path to your route file
   layout: "AugmentingLayout",
 };
 
