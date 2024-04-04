@@ -7,6 +7,8 @@ import swaggerJsDocs from "swagger-jsdoc";
 import config from "config";
 const { swaggerURL, swaggerPort } = config.app;
 
+console.log(swaggerURL);
+
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
